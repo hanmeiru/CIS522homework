@@ -4,7 +4,7 @@ import numpy as np
 class LinearRegression:
 
     """
-    A linear regression model that uses closed-form formula to 
+    A linear regression model that uses closed-form formula to
     calculate the weights and fit the model.
     """
 
@@ -17,15 +17,15 @@ class LinearRegression:
 
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
         """
-        Fit the linear regression model with given independent dataset X and 
+        Fit the linear regression model with given independent dataset X and
         dependent dataset y by updating the parameters w and b.
 
         Arguments:
             X (np.ndarray): the training input data.
-            y (np.ndarray): the training output data. 
+            y (np.ndarray): the training output data.
 
         Returns:
-            None 
+            None
 
         """
         # X: (n,p), y:(n,)
@@ -43,13 +43,13 @@ class LinearRegression:
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
-          Predict the output for the given input.
+        Predict the output for the given input.
 
-          Arguments:
-              X (np.ndarray): The input data.
+        Arguments:
+            X (np.ndarray): The input data.
 
-          Returns:
-              np.ndarray: The predicted output.
+        Returns:
+            np.ndarray: The predicted output.
 
         """
         return X @ self.w + self.b  #
@@ -64,17 +64,17 @@ class GradientDescentLinearRegression(LinearRegression):
         self, X: np.ndarray, y: np.ndarray, lr: float = 0.1, epochs: int = 2000000
     ) -> None:
         """
-        Fit the linear regression model with given independent dataset X and 
+        Fit the linear regression model with given independent dataset X and
         dependent dataset y by updating the parameters w and b.
 
         Arguments:
             X (np.ndarray): the training input data.
-            y (np.ndarray): the training output data. 
+            y (np.ndarray): the training output data.
             lr (float): the learning rate of training.
             epochs (int): number of training epochs.
-            
+
         Returns:
-            None 
+            None
 
         """
         n = X.shape[0]  # number of rows = 10320
@@ -93,8 +93,8 @@ class GradientDescentLinearRegression(LinearRegression):
             w_grad_total += abs(w_grad)
             b_grad_total += abs(b_grad)
             # update weights (using adaptive learning rate)
-            self.w -= w_grad * (lr / (w_grad_total ** 0.5))
-            self.b -= b_grad * (lr / (b_grad_total ** 0.5))
+            self.w -= w_grad * (lr / (w_grad_total**0.5))
+            self.b -= b_grad * (lr / (b_grad_total**0.5))
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """

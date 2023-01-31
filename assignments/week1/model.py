@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class LinearRegression:
 
     """
@@ -111,4 +112,3 @@ class GradientDescentLinearRegression(LinearRegression):
         else:  # reinitialize w based on the size of X
             self.w = np.random.normal(size=(X.shape[1],))
             return X @ self.w + self.b
-

@@ -44,6 +44,10 @@ def main():
     """
     # Get the data:
     X_train, X_test, y_train, y_test = get_housing_data()
+    print(X_train.size())
+    print(X_test.size())
+    print(y_train.size())
+    print(y_train.size())
 
     # Create a linear regression model:
     lr = LinearRegression()

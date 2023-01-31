@@ -61,7 +61,7 @@ class GradientDescentLinearRegression(LinearRegression):
     """
 
     def fit(
-        self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
+        self, X: np.ndarray, y: np.ndarray, lr: float = 0.1, epochs: int = 2000000
     ) -> None:
         """
         Fit the linear regression model with given independent dataset X and 

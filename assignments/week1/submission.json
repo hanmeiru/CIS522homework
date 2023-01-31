@@ -1,12 +1,5 @@
 {
     "assignment_name": "Assignment 1",
-    "contributors": [
-        {
-            "name": "Meiru Han",
-            "pennkey": "meiru"
-        }
-    ],
-    "sources": [
-        "https://wiki.tum.de/display/lfdv/Adaptive+Learning+Rate+Method",
-    ]
+    "contributors": [{"name": "Meiru Han", "pennkey": "meiru"}],
+    "sources": ["https://wiki.tum.de/display/lfdv/Adaptive+Learning+Rate+Method",],
 }

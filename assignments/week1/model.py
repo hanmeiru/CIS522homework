@@ -30,6 +30,7 @@ class LinearRegression:
         """
         # X: (n,p), y:(n,)
         # w: (p,1), b: float
+
         one_vec = np.ones(len(X)).reshape(-1, 1)  # (n,1)
         X_augmented = np.concatenate((X, one_vec), axis=1)  # (n,p+1)
         if np.linalg.det(X_augmented.T @ X_augmented) != 0:
@@ -60,7 +61,7 @@ class GradientDescentLinearRegression(LinearRegression):
     """
 
     def fit(
-        self, X: np.ndarray, y: np.ndarray, lr: float = 10, epochs: int = 1000000
+        self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
     ) -> None:
         """
         Fit the linear regression model with given independent dataset X and 

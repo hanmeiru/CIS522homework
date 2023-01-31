@@ -84,7 +84,7 @@ class GradientDescentLinearRegression(LinearRegression):
             # predict y
             y_pred = self.predict(X)
             # calculate loss
-            loss = (y_pred - y).T @ (y_pred - y) / n  # not used
+            # loss = (y_pred - y).T @ (y_pred - y) / n  # not used
             # calculate gradient:
             # for each observation i, partial_loss/partial w_j = 2(y_pred_i-y_i)x_ij/n
             # partial_loss / partial_b =  2(y_pred-y)/n

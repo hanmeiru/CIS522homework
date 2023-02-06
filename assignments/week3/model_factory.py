@@ -20,9 +20,9 @@ def create_model(input_dim: int, output_dim: int) -> MLP:
     """
     return MLP(
         input_dim,
-        16,
+        32,
         output_dim,
-        2,
+        4,
         torch.nn.LeakyReLU(),
         torch.nn.init.xavier_normal_,
     )

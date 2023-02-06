@@ -1,6 +1,5 @@
 """
-Contains the class that 
-defines the MLP model
+Contains the class that defines the MLP model
 """
 
 import torch

@@ -1,3 +1,6 @@
+"""
+Creates a MLP model with specified hyperparameters
+"""
 import torch
 from model import MLP
 
@@ -15,4 +18,6 @@ def create_model(input_dim: int, output_dim: int) -> MLP:
         MLP: The created model.
 
     """
-    return MLP(input_dim, 32, output_dim, 3, torch.nn.LeakyReLU, torch.nn.init.xavier_uniform_)
+    return MLP(
+        input_dim, 32, output_dim, 3, torch.nn.LeakyReLU, torch.nn.init.xavier_uniform_
+    )

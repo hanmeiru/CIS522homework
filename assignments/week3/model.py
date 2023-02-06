@@ -1,9 +1,19 @@
+"""
+Contains the class that 
+defines the MLP model
+"""
+
 import torch
 import torch.nn as nn
 from typing import Callable
 
 
 class MLP(torch.nn.Module):
+    """
+    Defines a multi-layer perceptron,
+    including initialization and forward
+    """
+
     def __init__(
         self,
         input_size: int,
@@ -46,7 +56,7 @@ class MLP(torch.nn.Module):
             if type(m) == nn.Linear:
                 initializer(m.weight)
 
-    def forward(self, x):
+    def forward(self, x: torch.tensor) -> torch.tensor:
         """
         Forward pass of the network.
 

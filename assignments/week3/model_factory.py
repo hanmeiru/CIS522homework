@@ -22,7 +22,7 @@ def create_model(input_dim: int, output_dim: int) -> MLP:
         input_dim,
         64,
         output_dim,
-        4,
+        3,
         torch.nn.LeakyReLU(),
-        torch.nn.init.xavier_normal_,
+        torch.nn.init.xavier_uniform_,
     )

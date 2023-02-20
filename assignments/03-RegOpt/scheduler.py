@@ -1,10 +1,9 @@
 """
-Customed Learning Rate Scheduler, 
+Customed Learning Rate Scheduler,
 inheriting torch.optim.lr_scheduler._LRScheduler
 """
 from typing import List
 import math
-
 from torch.optim.lr_scheduler import _LRScheduler
 
 
@@ -35,9 +34,7 @@ class CustomLRScheduler(_LRScheduler):
         """
         # Note to students: You CANNOT change the arguments or return type of
         # this function (because it is called internally by Torch)
-
         # ... Your Code Here ...
-
         if self.last_epoch < self.start_batch:
             # print("using base lr: ", self.base_lrs)
             return [i for i in self.base_lrs]

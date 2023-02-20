@@ -13,9 +13,7 @@ class CustomLRScheduler(_LRScheduler):
     inheriting torch.optim.lr_scheduler._LRScheduler
     """
 
-    def __init__(
-        self, optimizer, last_epoch=-1, start_batch=7820
-    ):  # lr unchanged for 15 epochs
+    def __init__(self, optimizer, last_epoch=-1, start_epoch=7):
         """
         Create a new scheduler.
         Note to students: You can change the arguments to this constructor,
@@ -23,7 +21,7 @@ class CustomLRScheduler(_LRScheduler):
         """
         # ... Your Code Here ...
         self.update_count = 0  # update lr per 782 batches
-        self.start_batch = start_batch
+        self.start_batch = start_epoch * 782  # keep lr unchanged for a few epochs
         super(CustomLRScheduler, self).__init__(optimizer, last_epoch)
 
     def get_lr(self) -> List[float]:
@@ -43,7 +41,7 @@ class CustomLRScheduler(_LRScheduler):
             if self.update_count == 782:
                 self.update_count = 0  # reset to 0
                 return [
-                    group["lr"] / (0.5 * math.log(0.5 * self.last_epoch) ** 0.5)
+                    group["lr"] / (math.log(self.last_epoch) ** 0.5)
                     for group in self.optimizer.param_groups
                 ]
             else:

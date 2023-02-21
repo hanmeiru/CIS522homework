@@ -13,7 +13,7 @@ class CustomLRScheduler(_LRScheduler):
     inheriting torch.optim.lr_scheduler._LRScheduler
     """
 
-    def __init__(self, optimizer, last_epoch=-1, start_epoch=5):
+    def __init__(self, optimizer, last_epoch=-1, start_epoch=6):
         """
         Create a new scheduler.
         Note to students: You can change the arguments to this constructor,

@@ -2,8 +2,11 @@
     "assignment_name": "Convolutions",
     "contributors": [
         {
-            "name": "Meiru Han",
+            "name": "Meiru",
             "pennkey": "meiru"
         }
+    ],
+    "sources": [
+        "Don't forget to list your sources/attribution here!"
     ]
 }

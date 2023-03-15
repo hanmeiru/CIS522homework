@@ -1,9 +1,8 @@
 """
-This class defines the architecture of the neural net 
+This class defines the architecture of the neural net
 """
 import torch
 from torch import nn
-
 
 class Model(torch.nn.Module):
     """

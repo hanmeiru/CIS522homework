@@ -18,13 +18,13 @@ class Model(torch.nn.Module):
         """
         super(Model, self).__init__()
         self.conv1 = nn.Conv2d(num_channels, 8, 3)
-        self.conv2 = nn.Conv2d(8, 16, 3)
+        self.conv2 = nn.Conv2d(8, 32, 3)
         self.maxpool = nn.MaxPool2d(kernel_size=2, stride=2)
         self.relu = nn.ReLU()
         self.fc1 = nn.Linear(
-            196 * 16, 16
+            196 * 32, 32
         )  # (32-4*2)/2 for width and height, 32 filters
-        self.fc2 = nn.Linear(16, num_classes)
+        self.fc2 = nn.Linear(32, num_classes)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """

@@ -22,7 +22,7 @@ class Model(torch.nn.Module):
         self.maxpool = nn.MaxPool2d(kernel_size=2, stride=2)
         self.relu = nn.ReLU()
         self.fc1 = nn.Linear(
-            15*15*16, 128
+            15 * 15 * 16, 128
         )  # (32-2)/2 for width and height, 32 filters
         self.fc2 = nn.Linear(128, num_classes)
 

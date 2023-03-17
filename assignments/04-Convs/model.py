@@ -17,12 +17,12 @@ class Model(torch.nn.Module):
         Initializes the layers of the neural net
         """
         super(Model, self).__init__()
-        self.conv1 = nn.Conv2d(num_channels, 32, 5, 2)
+        self.conv1 = nn.Conv2d(num_channels, 64, 5, 2)
         # self.conv2 = nn.Conv2d(8, 32, 3)
         self.maxpool = nn.MaxPool2d(kernel_size=4, padding=1, stride=4)
         self.relu = nn.ReLU()
         self.fc1 = nn.Linear(
-            4 * 4 * 32, 128
+            4 * 4 * 64, 128
         )  # (32-4)/2 for width and height, 32 filters
         self.fc2 = nn.Linear(128, num_classes)
 
